@@ -1,0 +1,25 @@
+﻿<div ng-controller="LandPropertiesCtrl as vm">
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <td>Picture</td>
+                    <td>Id</td>
+                    <td>Area</td>
+                    <td>UPI</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="property in vm.properties">
+                    <td>
+                        <img ng-src="{{property.imageUrl}}">
+                    </td>
+                    <td>{{ property.Id}}</td>
+                    <td>{{ property.Area }}</td>
+                    <td>{{ property.UPI }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -34,3 +34,14 @@ body {
   left: 2em;
   opacity: 0;
 }
+
+/*Custom*/
+.table{
+    width:500px;
+    height:400px;
+}
+
+.table img{
+    height:50px;
+    width:40px;
+}

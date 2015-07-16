@@ -18,10 +18,10 @@
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
-                .state('home', {
+                .state('landProperties', {
                     url: '/',
-                    templateUrl: '/App/Main/views/home/home.cshtml',
-                    menu: 'Home' //Matches to name of 'Home' menu in LandPropertiesAppNavigationProvider
+                    templateUrl: '/App/Main/views/home/landPropertiesCtrl.cshtml',
+                    menu: 'LandProperties' //Matches to name of 'Home' menu in LandPropertiesAppNavigationProvider
                 })
                 .state('about', {
                     url: '/about',

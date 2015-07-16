@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="tr">
   <texts>
-    <text name="HomePage" value="Ana Sayfa" />
+    <text name="LandProperties" value="Ana Sayfa" />
     <text name="About" value="Hakkında" />
     <text name="WellcomeMessage" value="LandPropertiesApp projesine hoşgeldiniz!" />
     <text name="Home_ThisIsATemplate" value="Bu proje şablonu, aşağıdaki teknolojileri kullanarak bir web uygulaması geliştirmek için başlangıç noktasıdır:" />

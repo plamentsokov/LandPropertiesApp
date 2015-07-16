@@ -16,8 +16,8 @@ namespace LandPropertiesApp.Web
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "Home",
-                        new LocalizableString("HomePage", LandPropertiesAppConsts.LocalizationSourceName),
+                        "LandProperties",
+                        new LocalizableString("LandProperties", LandPropertiesAppConsts.LocalizationSourceName),
                         url: "#/",
                         icon: "fa fa-home"
                         )
