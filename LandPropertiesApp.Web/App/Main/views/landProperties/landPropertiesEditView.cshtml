@@ -1,0 +1,24 @@
+﻿<div class="ui-container">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="font-size:large">
+            Land property UPI: {{vm.landProperty.UPI}}
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="UPI">UPI</label>
+                <input type="text" class="form-control" id="UPI" placeholder="UPI" ng-model="vm.landProperty.UPI" />
+            </div>
+            <div class="form-group">
+                <label for="Area">Area</label>
+                <input type="text" class="form-control" id="Area" placeholder="Area" ng-model="vm.landProperty.Area" />
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">File input</label>
+                <input type="file" id="imageUrl">
+                <p class="help-block">Upload image for the property</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

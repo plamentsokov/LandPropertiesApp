@@ -44,8 +44,10 @@ namespace LandPropertiesApp.Web
                         "~/Scripts/others/spinjs/spin.js",
                         "~/Scripts/others/spinjs/jquery.spin.js",
 
-                        "~/Scripts/angular.min.js",
-                        "~/Scripts/angular-animate.min.js",
+                        "~/Scripts/angular.js",                        
+                        "~/Scripts/angular-resource.js",
+                        "~/Scripts/angular-mocks.js",
+                        "~/Scripts/angular-animate.min.js",                        
                         "~/Scripts/angular-sanitize.min.js",
                         "~/Scripts/angular-ui-router.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap.min.js",

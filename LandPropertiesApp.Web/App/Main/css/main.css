@@ -1,6 +1,5 @@
 ﻿/* Application specific styles */
 body {
-  padding-top: 80px;
 }
 /* Styles for angular ui transition animations */
 .angular-animation-container {
@@ -44,4 +43,8 @@ body {
 .table img{
     height:50px;
     width:40px;
+}
+
+form{
+    padding: 40px 10px 10px 10px;
 }

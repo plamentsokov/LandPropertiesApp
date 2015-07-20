@@ -195,11 +195,15 @@
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Main\app.js" />
+    <Content Include="App\Main\common\services\common.services.js" />
+    <Content Include="App\Main\common\services\landPropertiesMock.js" />
+    <Content Include="App\Main\common\services\landPropertiesResource.js" />
     <Content Include="App\Main\css\main.css" />
     <Content Include="App\Main\images\abp-logo.png" />
+    <Content Include="App\Main\views\landProperties\landPropertiesEditCtrl.js" />
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
-    <Content Include="App\Main\views\home\landPropertiesCtrl.js" />
+    <Content Include="App\Main\views\landProperties\landPropertiesCtrl.js" />
     <Content Include="App\Main\views\about\about.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -255,7 +259,7 @@
     <Content Include="Localization\LandPropertiesApp\LandPropertiesApp.tr.xml" />
     <Content Include="Localization\LandPropertiesApp\LandPropertiesApp.xml" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
-    <Content Include="App\Main\views\home\landPropertiesCtrl.cshtml" />
+    <Content Include="App\Main\views\landProperties\landPropertiesView.cshtml" />
     <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\web.config" />
     <Content Include="log4net.config" />
@@ -264,6 +268,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="App\Main\views\landProperties\landPropertiesEditView.cshtml" />
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -1129,7 +1134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Main\app\" />
-    <Folder Include="App\Main\common\services\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

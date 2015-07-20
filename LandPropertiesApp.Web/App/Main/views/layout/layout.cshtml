@@ -43,13 +43,39 @@
 </head>
 <body>
     <div ng-app="app">
-        <div ng-controller="app.views.layout as vm">
+        @*<div ng-controller="app.views.layout as vm">
             <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
             <div class="container">
                 <div class="angular-animation-container row">
                     <div ui-view class="shuffle-animation col-xs-12"></div>
                 </div>
             </div>
+        </div>*@
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand"
+                   ui-sref="about">Land Properties Managment</a>
+                <div class="navbar-header">
+                    <button type="button"
+                            class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="landPropertiesList">Land Properties</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div ui-view></div>
         </div>
     </div>
 </body>

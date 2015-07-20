@@ -1,4 +1,4 @@
-﻿<div ng-controller="LandPropertiesCtrl as vm">
+﻿<div>
     <div class="panel-body">
         <table class="table">
 
@@ -8,6 +8,7 @@
                     <td>Id</td>
                     <td>Area</td>
                     <td>UPI</td>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +19,19 @@
                     <td>{{ property.Id}}</td>
                     <td>{{ property.Area }}</td>
                     <td>{{ property.UPI }}</td>
+                    <td>
+                        <button class="btn btn-primary"
+                           ui-sref="landPropertiesEdit({ Id: property.Id })">
+                            Edit
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
+        <button class="btn btn-primary"
+                ui-sref="landPropertiesEdit({ Id: 0 })">
+            + Add
+        </button>
     </div>
 </div>
