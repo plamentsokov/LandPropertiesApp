@@ -1,7 +1,7 @@
 ﻿<div class="ui-container">
     <div class="panel panel-primary">
         <div class="panel-heading" style="font-size:large">
-            Land property UPI: {{vm.landProperty.UPI}}
+            {{vm.title}}
         </div>
 
         <form>
@@ -18,7 +18,8 @@
                 <input type="file" id="imageUrl">
                 <p class="help-block">Upload image for the property</p>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success" ng-click="vm.submit()">Submit</button>
+            <button type="submit" class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
         </form>
     </div>
 </div>
