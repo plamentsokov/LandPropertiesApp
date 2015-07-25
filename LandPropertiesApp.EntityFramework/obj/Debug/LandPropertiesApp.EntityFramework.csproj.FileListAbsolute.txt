@@ -62,7 +62,7 @@ D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\bin\Debug\Nito.Asy
 D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\bin\Debug\Nito.AsyncEx.Enlightenment.xml
 D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\bin\Debug\System.Collections.Immutable.xml
 D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.csprojResolveAssemblyReference.cache
-D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.dll
-D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.pdb
 D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.Migrations.AddOwners.resources
 D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.csproj.GenerateResource.Cache
+D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.dll
+D:\Github\LandPropertiesApp\LandPropertiesApp.EntityFramework\obj\Debug\LandPropertiesApp.EntityFramework.pdb

@@ -12,5 +12,10 @@ namespace LandPropertiesApp.Entities
 
         public int? MortgageId { get; set; }
         public virtual Mortgage Mortgage { get; set; }
+
+        public LandProperty()
+        {
+            Owners = new HashSet<Owner>();
+        }
     }
 }

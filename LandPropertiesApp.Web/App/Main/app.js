@@ -2,13 +2,14 @@
     'use strict';
 
     var app = angular.module('app', [
-
         'ngAnimate',
         'ngSanitize',
+        'ngTable',
 
         'ui.router',
         'ui.bootstrap',
         'ui.jq',
+
         'abp',
         'akFileUploader',
         'angularFileUpload'
@@ -68,14 +69,54 @@
                     templateUrl: '/App/Main/views/owners/ownersEditView.cshtml',
                     controller: 'OwnersEditCtrl as vm',
                     resolve: {
-                        ownersResource: "ownersResource",
-                        owner: function (ownersResource, $stateParams) {
-                            var Id = $stateParams.id;
-                            console.log("asdasd");
-                            return ownersResource.get({ Id: Id }).$promise;
+                        ownerService: 'abp.services.landpropertyapp.owner',
+                        q: '$q',
+                        owner: function ($stateParams, ownerService, $q) {
+                            var id = $stateParams.Id;
+                            var deferred = $q.defer();
+                            abp.ui.setBusy(null,
+                                           ownerService.getOwner({ OwnerId: id }).success(function (data) {
+                                               deferred.resolve(data.singleOwner);
+                                           })
+                                       );
+
+                            return deferred.promise;
                         }
                     }
                 })
+                 .state('ownersEdit.info', {
+                     url: '/info',
+                     templateUrl: '/App/Main/views/owners/ownerEditInfoView.cshtml'
+                 })
+                .state('ownersEdit.properties', {
+                    url: '/properties',
+                    templateUrl: '/App/Main/views/owners/ownerEditPropertiesView.cshtml'
+                })
+                .state('mortgageList', {
+                    url: '/mortgages',
+                    templateUrl: '/App/Main/views/mortgages/mortgageView.cshtml',
+                    controller: 'MortgageCtrl as vm'
+                })
+                 .state('mortgageEdit', {
+                     url: '/mortgages/edit/:Id',
+                     templateUrl: '/App/Main/views/mortgages/mortgageEditView.cshtml',
+                     controller: 'MortgageEditCtrl as vm',
+                     resolve: {
+                         mortgageService: 'abp.services.landpropertyapp.mortgage',
+                         q: '$q',
+                         mortgage: function ($stateParams, mortgageService, $q) {
+                             var id = $stateParams.Id;
+                             var deferred = $q.defer();
+                             abp.ui.setBusy(null,
+                                            mortgageService.get({ MortgageId: id }).success(function (data) {
+                                                deferred.resolve(data.singleMortgage);
+                                            })
+                                        );
+
+                             return deferred.promise;
+                         }
+                     }
+                 })
                 .state('about', {
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml'

@@ -1,0 +1,36 @@
+﻿<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <td>Picture</td>
+            <td>Area</td>
+            <td>UPI</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="property in vm.owner.landProperties">
+            <td>
+                <img ng-src="{{property.fullImageUrl}}">
+            </td>
+            <td>{{ property.area }}</td>
+            <td>{{ property.upi }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<form novalidate>
+    <div class='container-fluid'>
+        <div class="form-group">
+            <input type="text" ng-model="vm.selectedProperty" placeholder="Land Property" typeahead="property as property.landPropertyFullInfo for property in
+                    vm.LandProperties | filter:{landPropertyFullInfo:$viewValue} | limitTo:10"
+                   class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-warning" ng-click="vm.addProperty()">Add Property</button>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" ng-click="vm.submit()">Submit</button>
+            <button type="submit" class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+        </div>
+    </div>
+</form>

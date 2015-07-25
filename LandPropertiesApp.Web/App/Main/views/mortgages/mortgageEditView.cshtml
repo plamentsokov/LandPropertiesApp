@@ -1,0 +1,56 @@
+﻿<form novalidate name="mortgageForm">
+    <div class="form-group" ng-class="{'has-error': mortgageForm.MortgageID.$invalid}">
+        <label for="MortgageID">Mortgage ID</label>
+        <input type="text" class="form-control" name="MortgageID" id="MortgageID" placeholder="Mortgage ID" ng-model="vm.mortgage.mortgageIdentifier" required ng-maxlength="8" ng-pattern="vm.onlyNumbers" />
+        <span class="help-block has-error" ng-show="mortgageForm.MortgageID.$error.required">Mortgage ID is required</span>
+        <span class="help-block has-error" ng-show="mortgageForm.MortgageID.$error.maxlength">Mortgage ID is cannot contain more than 8 numbers</span>
+        <span class="help-block has-error" ng-show="mortgageForm.MortgageID.$error.pattern">Mortgage ID must contain only digits</span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': mortgageForm.Amount.$invalid}">
+        <label for="Amount">Amount</label>
+        <input type="text" class="form-control" name="Amount" id="Amount" placeholder="Amount" ng-model="vm.mortgage.amountRecieved" required/>
+        <span class="help-block has-error" ng-show="mortgageForm.Amount.$error.required">Amount is required in format "12.34"</span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': mortgageForm.MortgageDate.$invalid}">
+        <label for="MortgageDate">Date</label>
+
+        <input class="form-control"
+               id="MortgageDate"
+               name="MortgageDate"
+               type="text"
+               datepicker-localdate
+               datepicker-popup="MM/dd/yyyy"
+               readonly="readonly"
+               is-open="vm.opened"
+               required
+               ng-model="vm.mortgage.createdOn" />
+        <span class="input-group-btn">
+            <button class="btn btn-default"
+                    ng-click="vm.open($event)">
+                <i class="glyphicon glyphicon-calendar" />
+            </button>
+        </span>
+        <span class="help-block has-error" ng-show="mortgageForm.MortgageDate.$error.required">Mortgage Date is required</span>
+    </div>
+
+    <button type="submit" class="btn btn-success" ng-click="vm.submit()" ng-disabled="mortgageForm.$invalid">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+</form>
+<div class="page-header">
+    <h2>
+        Land Property Info
+    </h2>
+</div>
+<div class="form-group">
+    <div>
+        <img ng-src="{{vm.mortgage.landProperty.fullImageUrl}}" alt="Image">
+    </div>
+</div>
+<div class="form-group">
+    <label for="UPI">UPI</label>
+    <input type="text" class="form-control" id="UPI" placeholder="UPI" ng-model="vm.mortgage.landProperty.upi" disabled />
+</div>
+<div class="form-group">
+    <label for="Area">Area</label>
+    <input type="text" class="form-control" id="Area" placeholder="Area" ng-model="vm.mortgage.landProperty.area" disabled />
+</div>

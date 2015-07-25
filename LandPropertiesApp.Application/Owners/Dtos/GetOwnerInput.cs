@@ -9,6 +9,6 @@ namespace LandPropertiesApp.Owners.Dtos
 {
     public class GetOwnerInput
     {
-        public string Id { get; set; }
+        public int OwnerId { get; set; }
     }
 }

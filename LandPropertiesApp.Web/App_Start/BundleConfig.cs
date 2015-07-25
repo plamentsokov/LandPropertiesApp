@@ -52,12 +52,11 @@ namespace LandPropertiesApp.Web
                         "~/Scripts/angular-file-upload.js",
                         "~/Scripts/angular-file-upload-shim.js",   
                         "~/Scripts/angular-sanitize.min.js",
+                        "~/Scripts/ng-table.min.js",
                         "~/Scripts/angular-ui-router.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                         "~/Scripts/angular-ui/ui-utils.min.js",
-
-
 
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",

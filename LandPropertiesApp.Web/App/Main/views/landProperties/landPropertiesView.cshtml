@@ -1,24 +1,28 @@
 ﻿<div>
     <div class="panel-body">
-        <table class="table table-hover">
+        <div class="row">
+            <div class="col-lg-offset-8 col-lg-4">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="search" />
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover" ng-table="tableParams">
 
-            <thead >
+            <thead>
                 <tr>
                     <td>Picture</td>
-                    <td>Id</td>
                     <td>Area</td>
                     <td>UPI</td>
                     <td>Action</td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="property in vm.properties">
+                <tr ng-repeat="property in vm.properties | filter:search">
                     <td>
                         <img ng-src="{{property.fullImageUrl}}">
                     </td>
-                    <td>{{ property.id}}</td>
-                    <td>{{ property.area }}</td>
-                    <td>{{ property.upi }}</td>
+                    <td data-title="'Area'" sortable="'area'">{{ property.area }}</td>
+                    <td data-title="'UPI'" sortable="'upi'">{{ property.upi }}</td>
                     <td>
                         <button class="btn btn-primary"
                                 ui-sref="landPropertiesEdit.info({ Id: property.id })">

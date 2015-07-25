@@ -12,5 +12,7 @@ namespace LandPropertiesApp.Mortgages.Dtos
         public int MortgageIdentifier { get; set; }
         public decimal AmountRecieved { get; set; }
         public DateTime CreatedOn { get; set; }
+
+        public MortgageLandPropertyDto LandProperty { get; set; }
     }
 }

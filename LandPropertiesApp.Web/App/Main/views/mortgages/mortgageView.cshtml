@@ -1,0 +1,35 @@
+﻿<div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-offset-8 col-lg-4">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="search" />
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover" ng-table="tableParams">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Amount Recieved</td>
+                    <td>Created On</td>
+                    <td>Land Property Info</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mortgage in vm.mortgages  | filter:search">
+                    <td data-title="Mortgage Identifier">{{ mortgage.mortgageIdentifier}}</td>
+                    <td data-title="Amount Recieved">{{ mortgage.amountRecieved | currency}}</td>
+                    <td data-title="Created On">{{ mortgage.createdOn | date:'MM/dd/yyyy'}}</td>
+                    <td data-title="Area">{{ mortgage.landProperty.area + ", " +  mortgage.landProperty.upi}}</td>
+                    <td>
+                        <button class="btn btn-primary"
+                                ui-sref="mortgageEdit({ Id: mortgage.id })">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

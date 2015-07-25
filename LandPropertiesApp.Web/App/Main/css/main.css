@@ -35,17 +35,27 @@ body {
 }
 
 /*Custom css*/
+
 .table-hover{
     margin-bottom:50px;
+    margin-top:5px;
 }
 
-.table-hover img{
-    height:50px;
-    width:60px;
+img{
+    max-width:150px;
 }
+
 .table-hover thead{
     background: #efefef;
     height: 150px;
+}
+
+.table-hover img{
+    max-width:100px;
+}
+
+.table-hover td{
+    vertical-align: middle!important;
 }
 
 form{

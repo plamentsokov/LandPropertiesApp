@@ -1,11 +1,15 @@
 ﻿<div>
     <div class="panel-body">
-        <table class="table table-hover">
-
+        <div class="row">
+            <div class="col-lg-offset-8 col-lg-4">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="search" />
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover" ng-table="tableParams">
             <thead>
                 <tr>
                     <td>Picture</td>
-                    <td>ID</td>
                     <td>Name</td>
                     <td>Address</td>
                     <td>Owner ID</td>
@@ -13,17 +17,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="owner in vm.owners">
+                <tr ng-repeat="owner in vm.owners | filter:search">
                     <td>
-                        <img ng-src="{{owner.imageUrl}}">
+                        <img ng-src="{{owner.fullImageUrl}}">
                     </td>
-                    <td>{{ owner.id}}</td>
-                    <td>{{ owner.firstName + " " + owner.lastName }}</td>
-                    <td>{{ owner.address }}</td>
-                    <td>{{ owner.ownerID }}</td>
+                    <td >{{ owner.fullName }}</td>
+                    <td >{{ owner.address }}</td>
+                    <td >{{ owner.ownerUniqueId }}</td>
                     <td>
                         <button class="btn btn-primary"
-                                ui-sref="ownersEdit({ Id: owner.Id })">
+                                ui-sref="ownersEdit.info({ Id: owner.id })">
                             Edit
                         </button>
                     </td>
@@ -32,7 +35,7 @@
         </table>
 
         <button class="btn btn-primary"
-                ui-sref="ownersEdit({ Id: 0 })">
+                ui-sref="ownersEdit.info({ Id: 0 })">
             + Add
         </button>
     </div>

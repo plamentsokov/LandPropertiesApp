@@ -195,22 +195,22 @@
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Main\app.js" />
-    <Content Include="App\Main\common\services\common.services.js" />
     <Content Include="App\Main\common\services\file-uploader.js" />
-    <Content Include="App\Main\common\services\landPropertiesServices\landPropertiesMock.js" />
-    <Content Include="App\Main\common\services\landPropertiesServices\landPropertiesResource.js" />
-    <Content Include="App\Main\common\services\ownersServices\ownersMock.js" />
-    <Content Include="App\Main\common\services\ownersServices\ownersResource.js" />
     <Content Include="App\Main\css\main.css" />
     <Content Include="App\Main\directives\datepicker-local.js" />
+    <Content Include="App\Main\images\1864367b5655c99c8b934dfe8f76c2fbbdafce2424202f1becca30c7c157e144.jpg" />
     <Content Include="App\Main\images\abp-logo.png" />
+    <Content Include="App\Main\images\cb0168f1a40184f7b07a6873b0ec876429121e5b22194358317817ed507eeaaa.jpg" />
     <Content Include="App\Main\views\landProperties\landPropertiesEditCtrl.js" />
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\landProperties\landPropertiesCtrl.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\mortgages\mortgageCtrl.js" />
+    <Content Include="App\Main\views\mortgages\mortgageEditCtrl.js" />
     <Content Include="App\Main\views\owners\ownersCtrl.js" />
     <Content Include="App\Main\views\owners\ownersEditCtrl.js" />
+    <Content Include="Content\angular-grid.min.css" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -282,6 +282,12 @@
     <Content Include="App\Main\views\landProperties\landPropertiesEditOwnersView.cshtml" />
     <Content Include="App\Main\views\landProperties\landPropertiesEditMortgage.cshtml" />
     <Content Include="App\Main\views\landProperties\landPropertiesUpload.cshtml" />
+    <Content Include="App\Main\views\mortgages\mortgageView.cshtml" />
+    <Content Include="App\Main\views\mortgages\mortgageEditView.cshtml" />
+    <Content Include="Scripts\ng-table.min.js" />
+    <Content Include="Scripts\ng-table.min.js.map" />
+    <Content Include="App\Main\views\owners\ownerEditInfoView.cshtml" />
+    <Content Include="App\Main\views\owners\ownerEditPropertiesView.cshtml" />
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -292,6 +298,7 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-file-upload-shim.js" />
     <Content Include="Scripts\angular-file-upload.js" />
+    <Content Include="Scripts\angular-grid.min.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -344,7 +351,6 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\FileAPI.min.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -1105,7 +1111,6 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
-    <Content Include="Scripts\ng-file-upload-all.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\others\html5shiv.js" />
     <Content Include="Scripts\others\respond.min.js" />
@@ -1119,7 +1124,6 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Scripts\upload.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -27,7 +27,6 @@ namespace LandPropertiesApp.LandProperties
         public async Task<GetLandPropertyOutput> GetLandProperties()
         {
             GetLandPropertyOutput output = new GetLandPropertyOutput();
-            string a = AppDomain.CurrentDomain.BaseDirectory;
 
             try
             {
@@ -77,19 +76,9 @@ namespace LandPropertiesApp.LandProperties
                 }                
             });
 
-            config.CreateMap<OwnerDto, Owner>().ConstructUsing(model =>
+            config.CreateMap<LandPropertyOwnerDto, Owner>().ConstructUsing(model =>
             {
-                if (model.Id == 0)
-                {
-                    Owner toAdd = new Owner();
-                    _ownerRepository.Insert(toAdd);
-
-                    return toAdd;
-                }
-                else
-                {
-                    return _ownerRepository.Get(model.Id);
-                }                
+                return _ownerRepository.Get(model.Id);
             });
 
             config.CreateMap<MortgageDto, Mortgage>().ConstructUsing(model =>
@@ -109,7 +98,7 @@ namespace LandPropertiesApp.LandProperties
                 {
                     return null;
                 }                
-            });
+            }).ForMember(x => x.LandProperty, o => o.Ignore());
 
             try
             {
@@ -119,18 +108,6 @@ namespace LandPropertiesApp.LandProperties
             {                
                 throw e;
             }            
-
-            //if (input.LandPropToUpdate.Id > 0)
-            //{
-            //    LandProperty toUpdate = await _landPropertyRepository.GetAsync(input.LandPropToUpdate.Id);
-
-            //    Mapper.Map(input.LandPropToUpdate, toUpdate);
-            //}
-            //else
-            //{
-            //    LandProperty toAdd = Mapper.Map(input.LandPropToUpdate, new LandProperty());
-            //    await _landPropertyRepository.InsertAsync(toAdd);
-            //}
         }
     }
 }

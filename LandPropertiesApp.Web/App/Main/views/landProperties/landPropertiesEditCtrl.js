@@ -7,19 +7,19 @@
                                                 "$state",
                                                 "abp.services.landpropertyapp.landProperty",
                                                 "abp.services.landpropertyapp.owner",
-                                                'akFileUploaderService','$scope','$http','$timeout','$upload',
+                                                '$scope','$http','$timeout','$upload',
                                                 LandPropertiesEditCtrl]);
 
-    function LandPropertiesEditCtrl(landProperty, $state, landPropertyService, ownersService, akFileUploaderService, $scope, $http, $timeout, $upload) {
+    function LandPropertiesEditCtrl(landProperty, $state, landPropertyService, ownersService, $scope, $http, $timeout, $upload) {
         var vm = this;
         console.log(landProperty);
         vm.landProperty = landProperty;
-        vm.landProperty.owners = landProperty.owners;
-        vm.landProperty.mortgage = landProperty.mortgage ? landProperty.mortgage : "";        
-        vm.title = landProperty.id ? "Edit land property N: " + landProperty.upi : "New land property";
+        vm.landProperty.owners = landProperty.owners ? landProperty.owners : [];
+        vm.landProperty.mortgage = landProperty.mortgage ? landProperty.mortgage : "";
+        vm.title = landProperty.id ? "Land property № " + landProperty.upi : "New Land property";
 
         vm.submit = function () {
-            abp.ui.setBusy( //Set whole page busy until getTasks complete
+            abp.ui.setBusy(
                 null,
                 landPropertyService.addOrUpdate({ LandPropToUpdate: vm.landProperty }).success(function (data) {
                     $state.go('landPropertiesList');
@@ -68,11 +68,13 @@
                 //console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
             }).success(function (data, status, headers, config) {
                 vm.landProperty.imageUrl = data.fileName;
-                vm.landProperty.imageType = data.fileType;
             }).error(function (data, status, headers, config) {
                 // file failed to upload
                 alert("Cant upload this file");
             });
         }
+
+        //patterns
+        vm.onlyNumbers = /^\d+$/;
     }
 })();

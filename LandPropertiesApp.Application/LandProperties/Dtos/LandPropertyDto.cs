@@ -11,8 +11,13 @@ namespace LandPropertiesApp.LandProperties.Dtos
         public string UPI { get; set; }
         public string ImageUrl { get; set; }
         public string FullImageUrl { get; set; }
-
-        public ICollection<OwnerDto> Owners { get; set; }
+        public string LandPropertyFullInfo { get; set; }
         public MortgageDto Mortgage { get; set; }
+        public ICollection<LandPropertyOwnerDto> Owners { get; set; }
+
+        public LandPropertyDto()
+        {
+            Owners = new List<LandPropertyOwnerDto>();
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace LandPropertiesApp.Owners
     public interface IOwnerAppService : IApplicationService
     {
         Task<GetOwnerOutput> GetOwners();
-        void UpdateOwner();
+        Task<GetOwnerOutput> GetOwner(GetOwnerInput input);
+        void AddOrUpdate(UpdateOwnerInput input);
     }
 }
