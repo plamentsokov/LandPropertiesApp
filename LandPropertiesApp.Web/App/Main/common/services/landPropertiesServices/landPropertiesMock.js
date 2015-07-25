@@ -12,17 +12,26 @@
             "Id": 1,
             "Area": "Mladost",
             "UPI": 21213123,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png",
+            "MortgageId": 0,
+            "Owners": [],
+            "Mortgage": { "Id": 1, "Amount": 234000, "MortgageDate": "May 24, 1999", "MortgageID": 0989089 }
         }, {
             "Id": 2,
             "Area": "Drujba",
             "UPI": 5675756,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png",
+            "MortgageId": 2,
+            "Owners": [],
+            "Mortgage": { }
         }, {
             "Id": 3,
             "Area": "Dianabad",
             "UPI": 434535435,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png",
+            "MortgageId": 1,
+            "Owners":[],
+            "Mortgage":{ }
         }];
 
         var propertiesUrl = "/api/landProperties";

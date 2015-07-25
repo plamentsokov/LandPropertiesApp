@@ -3,6 +3,7 @@ using System.Reflection;
 using Abp.EntityFramework;
 using Abp.Modules;
 using LandPropertiesApp.EntityFramework;
+using LandPropertiesApp.EntityFramework.Repositories;
 
 namespace LandPropertiesApp
 {
@@ -11,7 +12,7 @@ namespace LandPropertiesApp
     {
         public override void PreInitialize()
         {
-            Configuration.DefaultNameOrConnectionString = "Default";
+            Configuration.DefaultNameOrConnectionString = "LandPropertiesSystemConnection";
         }
 
         public override void Initialize()

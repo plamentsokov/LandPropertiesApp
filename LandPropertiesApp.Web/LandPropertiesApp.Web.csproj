@@ -196,15 +196,21 @@
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="App\Main\app.js" />
     <Content Include="App\Main\common\services\common.services.js" />
-    <Content Include="App\Main\common\services\landPropertiesMock.js" />
-    <Content Include="App\Main\common\services\landPropertiesResource.js" />
+    <Content Include="App\Main\common\services\file-uploader.js" />
+    <Content Include="App\Main\common\services\landPropertiesServices\landPropertiesMock.js" />
+    <Content Include="App\Main\common\services\landPropertiesServices\landPropertiesResource.js" />
+    <Content Include="App\Main\common\services\ownersServices\ownersMock.js" />
+    <Content Include="App\Main\common\services\ownersServices\ownersResource.js" />
     <Content Include="App\Main\css\main.css" />
+    <Content Include="App\Main\directives\datepicker-local.js" />
     <Content Include="App\Main\images\abp-logo.png" />
     <Content Include="App\Main\views\landProperties\landPropertiesEditCtrl.js" />
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\landProperties\landPropertiesCtrl.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\owners\ownersCtrl.js" />
+    <Content Include="App\Main\views\owners\ownersEditCtrl.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -255,6 +261,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
+    <Content Include="Images\no_image.gif" />
     <Content Include="Localization\LandPropertiesApp\LandPropertiesApp-zh-CN.xml" />
     <Content Include="Localization\LandPropertiesApp\LandPropertiesApp.tr.xml" />
     <Content Include="Localization\LandPropertiesApp\LandPropertiesApp.xml" />
@@ -269,6 +276,12 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App\Main\views\landProperties\landPropertiesEditView.cshtml" />
+    <Content Include="App\Main\views\owners\ownersView.cshtml" />
+    <Content Include="App\Main\views\owners\ownersEditView.cshtml" />
+    <Content Include="App\Main\views\landProperties\landPropertiesEditInfoView.cshtml" />
+    <Content Include="App\Main\views\landProperties\landPropertiesEditOwnersView.cshtml" />
+    <Content Include="App\Main\views\landProperties\landPropertiesEditMortgage.cshtml" />
+    <Content Include="App\Main\views\landProperties\landPropertiesUpload.cshtml" />
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -277,6 +290,8 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-file-upload-shim.js" />
+    <Content Include="Scripts\angular-file-upload.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -329,6 +344,7 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\FileAPI.min.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -1089,6 +1105,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\ng-file-upload-all.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\others\html5shiv.js" />
     <Content Include="Scripts\others\respond.min.js" />
@@ -1102,7 +1119,10 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\upload.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -1110,11 +1130,15 @@
     <Compile Include="App_Start\LandPropertiesAppNavigationProvider.cs" />
     <Compile Include="App_Start\LandPropertiesAppWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandPropertiesAppControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CustomMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Models\UploadDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\LandPropertiesAppWebViewPageBase.cs" />
   </ItemGroup>
@@ -1134,7 +1158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Main\app\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Files\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LandPropertiesApp.Application\LandPropertiesApp.Application.csproj">

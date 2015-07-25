@@ -1,4 +1,6 @@
 ﻿using Abp.EntityFramework;
+using LandPropertiesApp.Entities;
+using System.Data.Entity;
 
 namespace LandPropertiesApp.EntityFramework
 {
@@ -9,13 +11,19 @@ namespace LandPropertiesApp.EntityFramework
         //Example:
         //public virtual IDbSet<User> Users { get; set; }
 
+        public virtual IDbSet<Owner> Owners { get; set; }
+
+        public virtual IDbSet<LandProperty> LandProperties { get; set; }
+
+        public virtual IDbSet<Mortgage> Mortgages { get; set; }
+
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not
          *   pass connection string name to base classes. ABP works either way.
          */
         public LandPropertiesAppDbContext()
-            : base("Default")
+            : base("LandPropertiesSystemConnection")
         {
 
         }
@@ -28,6 +36,19 @@ namespace LandPropertiesApp.EntityFramework
             : base(nameOrConnectionString)
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<LandProperty>()
+                        .HasOptional(a => a.Mortgage)
+                        .WithRequired(x => x.LandProperty);
+
+            modelBuilder.Entity<Mortgage>()
+                        .HasRequired(b => b.LandProperty)
+                        .WithOptional(a => a.Mortgage);
         }
     }
 }

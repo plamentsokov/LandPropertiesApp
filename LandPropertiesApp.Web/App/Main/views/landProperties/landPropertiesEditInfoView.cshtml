@@ -1,0 +1,30 @@
+﻿<form novalidate>
+    <div class="form-group">
+        <label for="UPI">UPI</label>
+        <input type="text" class="form-control" id="UPI" placeholder="UPI" ng-model="vm.landProperty.upi" />
+    </div>
+    <div class="form-group">
+        <label for="Area">Area</label>
+        <input type="text" class="form-control" id="Area" placeholder="Area" ng-model="vm.landProperty.area" />
+    </div>
+    <div class="form-group">
+        <div>
+            <img ng-src="{{vm.landProperty.fullImageUrl}}" alt="Image">
+        </div>
+        <label for="attachment" class="col-md-2 control-label">Attachment</label>
+        <div class="col-md-10">
+            @*<input type="file" name="attachment"
+                   class="form-control" data-ak-file-model="vm.landProperty.attachment" />*@
+
+            <div>
+                <input type="file" name="attachment" class="form-control" ng-file-select="onFileSelect($files)">
+            </div>
+
+        </div>
+        <p class="help-block">Upload image for the property</p>
+    </div>
+
+    <button type="submit" class="btn btn-success" ng-click="vm.submit()">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+
+</form>

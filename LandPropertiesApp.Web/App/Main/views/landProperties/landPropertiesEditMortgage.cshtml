@@ -1,0 +1,30 @@
+﻿<form novalidate >
+    <div class="form-group">
+        <label for="MortgageID">Mortgage ID</label>
+        <input type="text" class="form-control" id="MortgageID" placeholder="Mortgage ID" ng-model="vm.landProperty.mortgage.mortgageIdentifier" />
+    </div>
+    <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input type="text" class="form-control" id="Amount" placeholder="Amount" ng-model="vm.landProperty.mortgage.amountRecieved" />
+    </div>
+    <div class="form-group">
+        <label for="MortgageDate">Date</label>
+
+        <input class="form-control"
+               id="MortgageDate"
+               type="text"
+               datepicker-localdate
+               datepicker-popup="MMM dd, yyyy"
+               readonly="readonly"
+               is-open="vm.opened"
+               ng-model="vm.landProperty.mortgage.createdOn" />
+        <span class="input-group-btn">
+            <button class="btn btn-default"
+                    ng-click="vm.open($event)">
+                <i class="glyphicon glyphicon-calendar" />
+            </button>
+        </span>
+    </div>
+    <button type="submit" class="btn btn-success" ng-click="vm.submit()">Submit</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+</form>

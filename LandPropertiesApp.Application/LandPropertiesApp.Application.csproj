@@ -78,6 +78,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,8 +86,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DtoMappings.cs" />
     <Compile Include="LandPropertiesAppApplicationModule.cs" />
     <Compile Include="LandPropertiesAppAppServiceBase.cs" />
+    <Compile Include="LandProperties\Dtos\GetLandPropertyOutput.cs" />
+    <Compile Include="LandProperties\Dtos\LandPropertyDto.cs" />
+    <Compile Include="LandProperties\Dtos\GetLandPropertyInput.cs" />
+    <Compile Include="LandProperties\Dtos\UpdateLandPropertyInput.cs" />
+    <Compile Include="LandProperties\ILandPropertyAppService.cs" />
+    <Compile Include="LandProperties\LandPropertyAppService.cs" />
+    <Compile Include="Mortgages\Dtos\MortgageDto.cs" />
+    <Compile Include="Mortgages\IMortgageAppService.cs" />
+    <Compile Include="Mortgages\MortgageAppService.cs" />
+    <Compile Include="Owners\Dtos\GetOwnerInput.cs" />
+    <Compile Include="Owners\Dtos\GetOwnerOutput.cs" />
+    <Compile Include="Owners\Dtos\OwnerDto.cs" />
+    <Compile Include="Owners\IOwnerAppService.cs" />
+    <Compile Include="Owners\OwnerAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +113,10 @@
     <ProjectReference Include="..\LandPropertiesApp.Core\LandPropertiesApp.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>LandPropertiesApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LandPropertiesApp.EntityFramework\LandPropertiesApp.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
+      <Name>LandPropertiesApp.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

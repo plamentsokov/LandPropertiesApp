@@ -14,7 +14,7 @@ namespace LandPropertiesApp
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(LandPropertiesAppApplicationModule).Assembly, "app")
+                .ForAll<IApplicationService>(typeof(LandPropertiesAppApplicationModule).Assembly, "landpropertyapp")
                 .Build();
         }
     }

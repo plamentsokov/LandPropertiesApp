@@ -47,12 +47,17 @@ namespace LandPropertiesApp.Web
                         "~/Scripts/angular.js",                        
                         "~/Scripts/angular-resource.js",
                         "~/Scripts/angular-mocks.js",
-                        "~/Scripts/angular-animate.min.js",                        
+                        "~/Scripts/angular-animate.min.js",
+                        "~/Scripts/angularjs-dropdown-multiselect.js",
+                        "~/Scripts/angular-file-upload.js",
+                        "~/Scripts/angular-file-upload-shim.js",   
                         "~/Scripts/angular-sanitize.min.js",
                         "~/Scripts/angular-ui-router.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap.min.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                         "~/Scripts/angular-ui/ui-utils.min.js",
+
+
 
                         "~/Abp/Framework/scripts/abp.js",
                         "~/Abp/Framework/scripts/libs/abp.jquery.js",
